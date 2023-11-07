@@ -1,5 +1,5 @@
 extends PanelContainer
-
+class_name Card
 enum Suit {
 	HEARTS,
 	DIAMONDS,
