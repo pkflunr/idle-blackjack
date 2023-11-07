@@ -1,11 +1,42 @@
-[gd_scene format=3 uid="uid://ovk5mt2q21gh"]
+[gd_scene load_steps=3 format=3 uid="uid://ovk5mt2q21gh"]
 
-[node name="Card" type="VBoxContainer"]
+[ext_resource type="Script" path="res://card.gd" id="1_ubwf6"]
 
-[node name="Label" type="Label" parent="."]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsgtr"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Card" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -28.0
+offset_right = 22.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_jsgtr")
+script = ExtResource("1_ubwf6")
+suit = 2
+value = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="SuitLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Suit"
+horizontal_alignment = 1
+uppercase = true
 
-[node name="Label2" type="Label" parent="."]
+[node name="ValueLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Value"
+horizontal_alignment = 1
+uppercase = true
