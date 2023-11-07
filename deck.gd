@@ -1,10 +1,12 @@
 extends Node
+class_name Deck
 
 var deck:Array[CardData]
+const CardData = preload("res://card_data.gd")
 
 func create_deck():
 	deck = []
-	for suit in Card.Suit:
+	for suit in Card.Suit.values():
 		for value in range(1,14):
 			deck.append(CardData.new(suit, value))
 
