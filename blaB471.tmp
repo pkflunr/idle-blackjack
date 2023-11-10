@@ -30,15 +30,7 @@ hand_name = "Dealer"
 layout_mode = 2
 hand_name = "Player"
 
-[node name="WinLoseLabel" type="Label" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-
 [node name="BlackJackControlPanel" parent="VBoxContainer" instance=ExtResource("3_2sk67")]
 layout_mode = 2
 
 [node name="Deck" parent="." instance=ExtResource("2_4ah77")]
-
-[connection signal="hit" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_hit"]
-[connection signal="play_again" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_play_again"]
-[connection signal="stand" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_stand"]

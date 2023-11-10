@@ -6,6 +6,7 @@
 bg_color = Color(1, 1, 1, 1)
 
 [node name="Card" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 150)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -25,6 +26,7 @@ value = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+alignment = 1
 
 [node name="SuitLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -39,3 +41,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Value"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="CardBackLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CARD BACK"
+horizontal_alignment = 1
+vertical_alignment = 1

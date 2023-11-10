@@ -13,6 +13,8 @@ enum Suit {
 @onready var suit_label = $VBoxContainer/SuitLabel
 @onready var value_label = $VBoxContainer/ValueLabel
 
+@onready var card_front = $VBoxContainer
+@onready var card_back = $CardBackLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,3 +48,12 @@ func _ready():
 func _set_text_to_red():
 	suit_label.add_theme_color_override("font_color", Color.RED)
 	value_label.add_theme_color_override("font_color", Color.RED)
+
+func show_front():
+	card_front.visible = true
+	card_back.visible = false
+
+
+func show_back():
+	card_front.visible = false
+	card_back.visible = true

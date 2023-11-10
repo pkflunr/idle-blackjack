@@ -1,11 +1,11 @@
-extends Control
+extends PanelContainer
 class_name HandDisplay
 
 @export var hand_name:String
 @export var card_scene:PackedScene
 
-@onready var card_container = $PanelContainer/MarginContainer/VBoxContainer/CardContainer
-@onready var hand_name_label = $PanelContainer/MarginContainer/VBoxContainer/HandNameLabel
+@onready var hand_name_label = $MarginContainer/VBoxContainer/HandNameLabel
+@onready var card_container = $MarginContainer/VBoxContainer/CardContainer
 
 var cards:Array[Card]
 var cards_data:Array[CardData]
@@ -19,13 +19,16 @@ func _ready():
 	cards = []
 	cards_data = []
 
-func add_card(card_data:CardData):
+func add_card(card_data:CardData, facedown:bool=false):
 	cards_data.append(card_data)
 	var new_card:Card = card_scene.instantiate()
 	new_card.value = card_data.value
 	new_card.suit = card_data.suit
 	cards.append(new_card)
 	card_container.add_child(new_card)
+	
+	if facedown:
+		new_card.show_back()
 
 func clear():
 	cards.clear()
@@ -56,3 +59,7 @@ func get_hand_value() -> int:
 			total_value += (ace_count - 1 + ace_alt_value)
 	
 	return total_value
+
+func reveal_hand():
+	for card in cards:
+		card.show_front()
