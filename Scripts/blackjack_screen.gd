@@ -48,9 +48,11 @@ func test_hand_values():
 	var dealer_hand_value = dealer_hand_display.get_hand_value()
 	var player_hand_value = player_hand_display.get_hand_value()
 	if dealer_hand_value > BLACKJACK_VALUE:
+		dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 		win_lose_label.text = "Dealer bust!"
 		win(false)
 	elif player_hand_value > BLACKJACK_VALUE:
+		dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 		win_lose_label.text = "Bust..."
 		lose(false)
 	elif player_hand_value == BLACKJACK_VALUE:
