@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cfw854lqhip55"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="MoneyLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostToNextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneyGenerationLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
