@@ -60,6 +60,7 @@ func get_hand_value() -> int:
 	
 	return total_value
 
+
 func reveal_hand():
 	for card in cards:
 		card.show_front()

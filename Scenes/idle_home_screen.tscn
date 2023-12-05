@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://gq0ytrqme2rp"]
+[gd_scene load_steps=3 format=3 uid="uid://gq0ytrqme2rp"]
 
 [ext_resource type="Script" path="res://Scripts/idle_home_screen_tabs.gd" id="1_4m3as"]
+[ext_resource type="PackedScene" uid="uid://cfw854lqhip55" path="res://Scenes/HUD.tscn" id="1_srfjy"]
 
 [node name="idle_home_screen" type="Node2D"]
 
@@ -12,9 +13,7 @@ offset_bottom = 640.0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="HUD" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_srfjy")]
 
 [node name="IdleHomeScreenTabs" type="TabContainer" parent="VBoxContainer"]
 layout_mode = 2

@@ -19,6 +19,23 @@ enum Suit {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	change_sprite()
+
+# changes this card's text to red instead of black
+func _set_text_to_red():
+	suit_label.add_theme_color_override("font_color", Color.RED)
+	value_label.add_theme_color_override("font_color", Color.RED)
+
+func show_front():
+#	card_front.visible = true
+#	card_back.visible = false
+	change_sprite()
+
+
+func show_back():
+	card_sprite.texture = load("res://Assets/PNG/Cards (large)/card_back.png")
+
+func change_sprite():
 	match(suit):
 		Suit.hearts:
 			suit_label.text = "hearts"
@@ -44,17 +61,4 @@ func _ready():
 		1:
 			card_sprite.texture = load(str("res://Assets/PNG/Cards (large)/card_", suit_label.text,"_A.png"))
 		_:
-			card_sprite.texture = load(str("res://Assets/PNG/Cards (large)/card_", suit_label.text, "_0", value, ".png")) 
-
-# changes this card's text to red instead of black
-func _set_text_to_red():
-	suit_label.add_theme_color_override("font_color", Color.RED)
-	value_label.add_theme_color_override("font_color", Color.RED)
-
-func show_front():
-	card_front.visible = true
-	card_back.visible = false
-
-
-func show_back():
-	card_sprite.texture = load("res://Assets/PNG/Cards (large)/card_back.png")
+			card_sprite.texture = load(str("res://Assets/PNG/Cards (large)/card_", suit_label.text, "_0", value, ".png"))

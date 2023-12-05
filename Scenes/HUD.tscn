@@ -3,13 +3,22 @@
 [node name="HUD" type="CanvasLayer"]
 
 [node name="MoneyLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
+offset_right = 380.0
 offset_bottom = 40.0
+text = "$100"
+scroll_active = false
 
 [node name="CostToNextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
+offset_left = 380.0
+offset_right = 760.0
 offset_bottom = 40.0
+text = "Cost to next level: $100000"
+scroll_active = false
 
 [node name="MoneyGenerationLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
+offset_left = 760.0
+offset_right = 1150.0
 offset_bottom = 40.0
+size_flags_horizontal = 8
+text = "Money earned per hr: "
+scroll_active = false
