@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/blackjack_screen.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Stats="*res://Scenes/stats.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"
