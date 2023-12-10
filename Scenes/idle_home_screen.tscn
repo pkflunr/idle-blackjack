@@ -14,6 +14,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="HUD" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_srfjy")]
+layout_mode = 2
 
 [node name="IdleHomeScreenTabs" type="TabContainer" parent="VBoxContainer"]
 layout_mode = 2

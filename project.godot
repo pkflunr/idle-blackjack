@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Stats="*res://Scenes/stats.gd"
 
+[display]
+
+window/size/viewport_width=486
+window/size/viewport_height=864
+window/handheld/orientation=1
+
 [rendering]
 
 renderer/rendering_method="mobile"

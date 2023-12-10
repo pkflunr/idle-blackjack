@@ -1,24 +1,31 @@
 [gd_scene format=3 uid="uid://cfw854lqhip55"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="PanelContainer"]
+size_flags_horizontal = 3
 
-[node name="MoneyLabel" type="RichTextLabel" parent="."]
-offset_right = 380.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "$100"
-scroll_active = false
 
-[node name="CostToNextLabel" type="RichTextLabel" parent="."]
-offset_left = 380.0
-offset_right = 760.0
-offset_bottom = 40.0
-text = "Cost to next level: $100000"
-scroll_active = false
+[node name="TitleLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "Idle Blackjack"
+horizontal_alignment = 1
 
-[node name="MoneyGenerationLabel" type="RichTextLabel" parent="."]
-offset_left = 760.0
-offset_right = 1150.0
-offset_bottom = 40.0
-size_flags_horizontal = 8
-text = "Money earned per hr: "
-scroll_active = false
+[node name="MoneyGenerationLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "$5/second"

@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://b47pjhu0rliin"]
+
+[ext_resource type="Texture2D" uid="uid://873oglnlonvt" path="res://icon.svg" id="1_qgdmk"]
+[ext_resource type="PackedScene" uid="uid://cfw854lqhip55" path="res://Scenes/HUD.tscn" id="1_qvflf"]
+[ext_resource type="Script" path="res://Scripts/main_screen.gd" id="1_tkt53"]
+[ext_resource type="PackedScene" uid="uid://bafo7nspi501e" path="res://Scenes/blackjack_screen.tscn" id="3_2ikg7"]
+
+[node name="MainScreen" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tkt53")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HUD" parent="VBoxContainer" instance=ExtResource("1_qvflf")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+tab_alignment = 1
+clip_tabs = false
+tabs_visible = false
+
+[node name="BlackJackScreen" parent="VBoxContainer/TabContainer" instance=ExtResource("3_2ikg7")]
+visible = false
+layout_mode = 2
+
+[node name="two" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer/two"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/two/CenterContainer"]
+layout_mode = 2
+text = "two!"
+
+[node name="three" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer/three"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/three/CenterContainer"]
+layout_mode = 2
+text = "three!"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BlackjackButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("1_qgdmk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IdleButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("1_qgdmk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UpgradeButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("1_qgdmk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/BlackjackButton" to="." method="_on_blackjack_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/IdleButton" to="." method="_on_idle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
