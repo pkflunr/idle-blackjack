@@ -24,15 +24,18 @@ alignment = 1
 
 [node name="HitButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Hit"
 
 [node name="StandButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Stand"
 
 [node name="PlayAgainButton" type="Button" parent="HBoxContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Play Again"
 
 [connection signal="pressed" from="HBoxContainer/HitButton" to="." method="_on_hit_button_pressed"]
