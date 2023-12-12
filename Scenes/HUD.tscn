@@ -1,11 +1,22 @@
-[gd_scene format=3 uid="uid://cfw854lqhip55"]
+[gd_scene load_steps=2 format=3 uid="uid://cfw854lqhip55"]
+
+[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_2rfo3"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_2rfo3")
 
 [node name="MoneyLabel" type="RichTextLabel" parent="."]
-offset_right = 380.0
-offset_bottom = 40.0
-text = "$100"
+anchors_preset = -1
+anchor_left = 0.247
+anchor_right = 0.351
+anchor_bottom = 0.19
+offset_left = -163.648
+offset_right = 165.352
+offset_bottom = 43.0
+size_flags_horizontal = 0
+bbcode_enabled = true
+text = "[center] $100 [center]"
+fit_content = true
 scroll_active = false
 
 [node name="CostToNextLabel" type="RichTextLabel" parent="."]
