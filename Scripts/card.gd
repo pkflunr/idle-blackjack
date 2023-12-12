@@ -12,6 +12,8 @@ enum Suit {
 
 @onready var card_sprite = $VBoxContainer/CardSprite
 
+var faceup = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_sprite()
@@ -20,10 +22,12 @@ func show_front():
 #	card_front.visible = true
 #	card_back.visible = false
 	change_sprite()
+	faceup = true
 
 
 func show_back():
 	texture = load("res://Assets/PNG/Cards (large)/card_back.png")
+	faceup = false
 
 func change_sprite():
 	var suit_text

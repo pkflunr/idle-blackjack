@@ -4,8 +4,9 @@ class_name HandDisplay
 @export var hand_name:String
 @export var card_scene:PackedScene
 
-@onready var hand_name_label = $MarginContainer/VBoxContainer/HandNameLabel
+@onready var hand_name_label = $MarginContainer/VBoxContainer/HBoxContainer/HandNameLabel
 @onready var card_container = $MarginContainer/VBoxContainer/CardContainer
+@onready var value_label = $MarginContainer/VBoxContainer/HBoxContainer/ValueLabel
 
 var cards:Array[Card]
 var cards_data:Array[CardData]
@@ -29,6 +30,11 @@ func add_card(card_data:CardData, facedown:bool=false):
 	
 	if facedown:
 		new_card.show_back()
+	
+	_update_value_label()
+
+func _update_value_label():
+	value_label.text = "Hand Value: " + (str(get_hand_value()) if cards[0].faceup else "?") 
 
 func clear():
 	cards.clear()
@@ -64,3 +70,4 @@ func get_hand_value() -> int:
 func reveal_hand():
 	for card in cards:
 		card.show_front()
+	_update_value_label()
