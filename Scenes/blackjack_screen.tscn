@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bafo7nspi501e"]
+[gd_scene load_steps=7 format=3 uid="uid://bafo7nspi501e"]
 
 [ext_resource type="PackedScene" uid="uid://bbermgijtupnc" path="res://Scenes/hand_display.tscn" id="1_2xuw3"]
 [ext_resource type="Script" path="res://Scripts/blackjack_screen.gd" id="1_ev3fv"]
 [ext_resource type="PackedScene" uid="uid://b8ha7sd4v4hus" path="res://Scenes/deck.tscn" id="2_4ah77"]
+[ext_resource type="PackedScene" uid="uid://w23ch4jo85np" path="res://Scenes/bet_screen.tscn" id="2_l8mdx"]
 [ext_resource type="PackedScene" uid="uid://v053ac4efnfd" path="res://Scenes/blackjack_control_panel.tscn" id="3_2sk67"]
+[ext_resource type="PackedScene" uid="uid://cfw854lqhip55" path="res://Scenes/HUD.tscn" id="5_0v005"]
 
 [node name="BlackJackScreen" type="Control"]
 layout_mode = 3
@@ -39,6 +41,16 @@ layout_mode = 2
 
 [node name="Deck" parent="." instance=ExtResource("2_4ah77")]
 
+[node name="HUD" parent="." instance=ExtResource("5_0v005")]
+
+[node name="BetScreen" parent="." instance=ExtResource("2_l8mdx")]
+layout_mode = 1
+offset_left = -286.5
+offset_top = -107.0
+offset_right = 286.5
+offset_bottom = 107.0
+
 [connection signal="hit" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_hit"]
 [connection signal="play_again" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_play_again"]
 [connection signal="stand" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_stand"]
+[connection signal="bet_pressed" from="BetScreen" to="." method="_on_bet_screen_bet_pressed"]

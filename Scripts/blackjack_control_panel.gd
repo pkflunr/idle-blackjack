@@ -17,6 +17,12 @@ func set_end_mode():
 	hit_button.visible = false
 	stand_button.visible = false
 	play_again_button.visible = true
+	
+func set_bet_mode():
+	hit_button.visible = false
+	stand_button.visible = false
+	play_again_button.visible = false
+	
 
 
 

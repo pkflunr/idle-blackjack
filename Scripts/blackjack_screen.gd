@@ -1,5 +1,6 @@
 extends Control
 
+@onready var bet_screen = $BetScreen
 @onready var deck:Deck = $Deck
 @onready var dealer_hand_display:HandDisplay = $VBoxContainer/DealerHandDisplay
 @onready var player_hand_display:HandDisplay = $VBoxContainer/PlayerHandDisplay
@@ -7,13 +8,18 @@ extends Control
 @onready var win_lose_label = $VBoxContainer/WinLoseLabel
 
 var game_ended = false
+var cash_change = 0
 
 const BLACKJACK_VALUE = 21
 const DEALER_STAND_THRESHOLD = 17
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_new_game()
+	bet_display()
+
+func bet_display():
+	bet_screen.visible = true
+	black_jack_control_panel.set_bet_mode()
 
 func _new_game():
 	game_ended = false
@@ -61,16 +67,25 @@ func end_game():
 	dealer_hand_display.reveal_hand()
 
 func win(blackjack:bool):
+	cash_change = Stats.current_bet*Stats.win_multiplier
+	if blackjack:
+		cash_change += Stats.current_bet*Stats.blackjack_multiplier
+	Stats.update_cash(cash_change)
+	win_lose_label.text += " You win $" + str(cash_change) + "!"
 	end_game()
 	
 func lose(blackjack:bool):
+	cash_change = Stats.current_bet*Stats.lose_multiplier
+	Stats.update_cash(-cash_change)
+	win_lose_label.text += " You lose $" + str(cash_change) + "!"
 	end_game()
 
 func draw():
 	end_game()
 
 func _on_play_again():
-	_new_game()
+	bet_display()
+	#_new_game()
 
 
 func _on_hit():
@@ -94,5 +109,10 @@ func _on_stand():
 			win_lose_label.text = "You lose..."
 			lose(false)
 		else:
-			win_lose_label.text = "Draw!"
+			win_lose_label.text = "Draw! Nothing happens."
 			draw()
+
+
+func _on_bet_screen_bet_pressed():
+	bet_screen.visible = false
+	_new_game()
