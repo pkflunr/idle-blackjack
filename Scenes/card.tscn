@@ -1,13 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ovk5mt2q21gh"]
+[gd_scene load_steps=3 format=3 uid="uid://ovk5mt2q21gh"]
 
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_hmo1c"]
 [ext_resource type="Texture2D" uid="uid://da24cmjudd8vw" path="res://Assets/PNG/Cards (large)/card_back.png" id="2_hknt0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsgtr"]
-bg_color = Color(1, 1, 1, 1)
-
-[node name="Card" type="PanelContainer"]
-custom_minimum_size = Vector2(120, 150)
+[node name="Card" type="TextureRect"]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -19,40 +16,8 @@ offset_right = 22.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_jsgtr")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_hknt0")
 script = ExtResource("1_hmo1c")
 value = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-alignment = 1
-
-[node name="SuitLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Suit"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="ValueLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Value"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="CardSprite" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(60, 75.5)
-scale = Vector2(2.84375, 2.54688)
-texture = ExtResource("2_hknt0")
-
-[node name="CardBackLabel" type="Label" parent="."]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CARD BACK"
-horizontal_alignment = 1
-vertical_alignment = 1
