@@ -37,9 +37,11 @@ size_flags_horizontal = 3
 text = "Hand Value: broken"
 horizontal_alignment = 2
 
-[node name="CardContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="CardContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
+columns = 3
 
 [node name="Card" parent="MarginContainer/VBoxContainer/CardContainer" instance=ExtResource("1_1uqdv")]
 layout_mode = 2
