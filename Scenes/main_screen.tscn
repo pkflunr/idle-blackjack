@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b47pjhu0rliin"]
+[gd_scene load_steps=6 format=3 uid="uid://b47pjhu0rliin"]
 
 [ext_resource type="Texture2D" uid="uid://873oglnlonvt" path="res://icon.svg" id="1_qgdmk"]
 [ext_resource type="PackedScene" uid="uid://cfw854lqhip55" path="res://Scenes/HUD.tscn" id="1_qvflf"]
 [ext_resource type="Script" path="res://Scripts/main_screen.gd" id="1_tkt53"]
 [ext_resource type="PackedScene" uid="uid://bafo7nspi501e" path="res://Scenes/blackjack_screen.tscn" id="3_2ikg7"]
+[ext_resource type="PackedScene" uid="uid://c1p4vgu4hwp47" path="res://Scenes/upgrade_screen.tscn" id="4_us3fm"]
 
 [node name="MainScreen" type="PanelContainer"]
 anchors_preset = 15
@@ -43,16 +44,9 @@ layout_mode = 2
 layout_mode = 2
 text = "two!"
 
-[node name="three" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+[node name="UpgradeScreen" parent="VBoxContainer/TabContainer" instance=ExtResource("4_us3fm")]
 visible = false
 layout_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer/three"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/three/CenterContainer"]
-layout_mode = 2
-text = "three!"
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
