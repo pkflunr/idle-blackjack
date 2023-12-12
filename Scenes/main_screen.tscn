@@ -30,10 +30,10 @@ clip_tabs = false
 tabs_visible = false
 
 [node name="BlackJackScreen" parent="VBoxContainer/TabContainer" instance=ExtResource("3_2ikg7")]
-visible = false
 layout_mode = 2
 
 [node name="two" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer/two"]

@@ -5,8 +5,6 @@ extends Control
 @onready var player_hand_display:HandDisplay = $VBoxContainer/PlayerHandDisplay
 @onready var black_jack_control_panel = $VBoxContainer/BlackJackControlPanel
 @onready var win_lose_label = $VBoxContainer/WinLoseLabel
-@onready var dealer_hand_count = $VBoxContainer/DealerHandDisplay/DealerHandCountDisplay
-@onready var player_hand_count = $VBoxContainer/PlayerHandDisplay/PlayerHandCountDisplay
 
 var game_ended = false
 
@@ -34,8 +32,6 @@ func _new_game():
 	for i in range(2):
 		player_hand_display.add_card(deck.draw_card())
 	
-	dealer_hand_count.text = str("Hand Value: ?")
-	
 	if dealer_hand_display.get_hand_value() == BLACKJACK_VALUE and dealer_hand_display.get_hand_value() > player_hand_display.get_hand_value():
 		win_lose_label.text = "Dealer Blackjack!"
 		lose(true)
@@ -48,17 +44,15 @@ func test_hand_values():
 	var dealer_hand_value = dealer_hand_display.get_hand_value()
 	var player_hand_value = player_hand_display.get_hand_value()
 	if dealer_hand_value > BLACKJACK_VALUE:
-		dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 		win_lose_label.text = "Dealer bust!"
 		win(false)
 	elif player_hand_value > BLACKJACK_VALUE:
-		dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 		win_lose_label.text = "Bust..."
 		lose(false)
 	elif player_hand_value == BLACKJACK_VALUE:
 		# automatically stand
 		_on_stand()
-	player_hand_count.text = str("Hand Value: ", player_hand_display.get_hand_value())
+	
 
 func end_game():
 	game_ended = true
@@ -94,14 +88,11 @@ func _on_stand():
 		var dealer_hand_value = dealer_hand_display.get_hand_value()
 		var player_hand_value = player_hand_display.get_hand_value()
 		if player_hand_value > dealer_hand_value:
-			dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 			win_lose_label.text = "You win!"
 			win(false)
 		elif player_hand_value < dealer_hand_value:
-			dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 			win_lose_label.text = "You lose..."
 			lose(false)
 		else:
-			dealer_hand_count.text = str("Hand Value: ", dealer_hand_display.get_hand_value())
 			win_lose_label.text = "Draw!"
 			draw()

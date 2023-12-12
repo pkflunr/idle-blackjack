@@ -26,21 +26,9 @@ grow_vertical = 2
 layout_mode = 2
 hand_name = "Dealer"
 
-[node name="DealerHandCountDisplay" type="Label" parent="VBoxContainer/DealerHandDisplay"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "Value: 10"
-
 [node name="PlayerHandDisplay" parent="VBoxContainer" instance=ExtResource("1_2xuw3")]
 layout_mode = 2
 hand_name = "Player"
-
-[node name="PlayerHandCountDisplay" type="Label" parent="VBoxContainer/PlayerHandDisplay"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "Value: 10"
 
 [node name="WinLoseLabel" type="Label" parent="VBoxContainer"]
 visible = false

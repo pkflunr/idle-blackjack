@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scripts/hand_display.gd" id="1_kwk8y"]
 
 [node name="HandDisplay" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 132.0
+offset_bottom = 94.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
@@ -14,13 +14,25 @@ card_scene = ExtResource("1_1uqdv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="HandNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Hand name"
 
 [node name="CardContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Card" parent="MarginContainer/VBoxContainer/CardContainer" instance=ExtResource("1_1uqdv")]
+layout_mode = 2
+
+[node name="Card2" parent="MarginContainer/VBoxContainer/CardContainer" instance=ExtResource("1_1uqdv")]
 layout_mode = 2
