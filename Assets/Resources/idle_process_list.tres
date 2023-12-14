@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="IdleProcessList" load_steps=6 format=3 uid="uid://c1d8nhsaaefwh"]
+[gd_resource type="Resource" script_class="IdleProcessList" load_steps=11 format=3 uid="uid://c1d8nhsaaefwh"]
 
 [ext_resource type="Script" path="res://Scripts/idle_process.gd" id="1_8hby8"]
 [ext_resource type="Script" path="res://Scripts/idle_list.gd" id="1_bgqnp"]
+[ext_resource type="Texture2D" uid="uid://csvqpj4k8eiwx" path="res://Assets/PNG/Cards (medium)/card_clubs_02.png" id="2_iubck"]
+[ext_resource type="Texture2D" uid="uid://fq8oglh11hxy" path="res://Assets/PNG/Cards (large)/card_clubs_07.png" id="3_cucjv"]
+[ext_resource type="Texture2D" uid="uid://cd25n83ps76c1" path="res://Assets/PNG/Cards (large)/card_clubs_10.png" id="4_j5js3"]
+[ext_resource type="Texture2D" uid="uid://utsdcpsop1mo" path="res://Assets/PNG/Cards (large)/card_clubs_J.png" id="5_vjdw6"]
 
 [sub_resource type="Resource" id="Resource_gtsl6"]
 script = ExtResource("1_8hby8")
@@ -11,6 +15,8 @@ upgrade_multiplier = 1
 base_cost = 100
 amount = 1
 time = 2.0
+description = "A cheapskate who you found on the streets. Willing to pay a portion of their shares in exchange for a sliver of money."
+texture = ExtResource("2_iubck")
 
 [sub_resource type="Resource" id="Resource_bilew"]
 script = ExtResource("1_8hby8")
@@ -18,8 +24,10 @@ name = "Moderate Player"
 value = 10
 upgrade_multiplier = 1
 base_cost = 10000
-amount = 1
+amount = 0
 time = 1.0
+description = "Your good old friend Ryan. Agreed to split winnings between you and him, as long as you pay him first that is."
+texture = ExtResource("3_cucjv")
 
 [sub_resource type="Resource" id="Resource_ky636"]
 script = ExtResource("1_8hby8")
@@ -27,9 +35,22 @@ name = "Heavy Gambler"
 value = 100
 upgrade_multiplier = 1
 base_cost = 1000000
-amount = 1
+amount = 0
 time = 1.0
+description = "A hopeless gambling addict. Agreed to share all spoils as long as they got to gamble as much as they could."
+texture = ExtResource("4_j5js3")
+
+[sub_resource type="Resource" id="Resource_345ju"]
+script = ExtResource("1_8hby8")
+name = "The Mafia"
+value = 1000
+upgrade_multiplier = 1
+base_cost = 1000000000
+amount = 0
+time = 1.0
+description = "Turns out having connections can get you really far... Agreed to pay you a small portion of their (possibly illegal) shares, as long as you bring in your end first."
+texture = ExtResource("5_vjdw6")
 
 [resource]
 script = ExtResource("1_bgqnp")
-list = Array[ExtResource("1_8hby8")]([SubResource("Resource_gtsl6"), SubResource("Resource_bilew"), SubResource("Resource_ky636")])
+list = Array[ExtResource("1_8hby8")]([SubResource("Resource_gtsl6"), SubResource("Resource_bilew"), SubResource("Resource_ky636"), SubResource("Resource_345ju")])
