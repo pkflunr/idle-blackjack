@@ -10,4 +10,6 @@ func _ready():
 		add_child(new_timer)
 
 func payout_process(process:IdleProcess):
-	Stats.cash += process.get_payout()
+	var money_per_second = process.get_payout()
+	Stats.cash += money_per_second
+

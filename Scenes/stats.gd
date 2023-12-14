@@ -5,6 +5,7 @@ signal bet_changed
 signal idle_changed
 
 var cash:int = 8000 
+var money_per_second = 0
 
 var idle_process_list:IdleProcessList = preload("res://Assets/Resources/idle_process_list.tres")
 var idle_process_dict:Dictionary
