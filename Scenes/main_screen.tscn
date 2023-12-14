@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://b47pjhu0rliin"]
+[gd_scene load_steps=5 format=3 uid="uid://b47pjhu0rliin"]
 
-[ext_resource type="Texture2D" uid="uid://873oglnlonvt" path="res://icon.svg" id="1_qgdmk"]
 [ext_resource type="PackedScene" uid="uid://cfw854lqhip55" path="res://Scenes/HUD.tscn" id="1_qvflf"]
 [ext_resource type="Script" path="res://Scripts/main_screen.gd" id="1_tkt53"]
 [ext_resource type="PackedScene" uid="uid://bafo7nspi501e" path="res://Scenes/blackjack_screen.tscn" id="3_2ikg7"]
@@ -69,8 +68,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("1_qgdmk")
-flat = true
+text = "Blackjack"
 icon_alignment = 1
 expand_icon = true
 
@@ -82,8 +80,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("1_qgdmk")
-flat = true
+text = "Money-Makers"
 icon_alignment = 1
 expand_icon = true
 
@@ -95,8 +92,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("1_qgdmk")
-flat = true
+text = "Upgrades"
 icon_alignment = 1
 expand_icon = true
 

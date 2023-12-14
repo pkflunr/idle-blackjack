@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://w23ch4jo85np"]
 
-[ext_resource type="Theme" uid="uid://c0qo4mnu5rg8a" path="res://Scenes/spinbox_theme.tres" id="1_g6af5"]
+[ext_resource type="Theme" path="res://Scenes/spinbox_theme.tres" id="1_g6af5"]
 [ext_resource type="Script" path="res://Scripts/bet_screen.gd" id="2_nyjb4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcgn5"]
