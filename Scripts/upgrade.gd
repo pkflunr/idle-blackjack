@@ -18,6 +18,7 @@ enum UpgradeType {
 @export var idle_process_name:String # used only by UPGRADE_IDLE, the name of the process to upgrade
 @export var obtained:bool
 @export var prerequisites:Array[String] # if any of the upgrades in this array are unobtained, then this upgrade should be invisible
+@export var texture:Texture2D
 
 func do_action():
 	match(type):

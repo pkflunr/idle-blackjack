@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://3j2emagftas2"]
+
+[ext_resource type="Script" path="res://Scenes/music_scene.gd" id="1_yowce"]
+[ext_resource type="AudioStream" uid="uid://bd13vmugo868k" path="res://Assets/Music/jazz-trio-165265.mp3" id="2_hpqof"]
+[ext_resource type="AudioStream" uid="uid://c5c4dv36knpho" path="res://Assets/Music/the-jazz-trio-164259.mp3" id="3_wh1vy"]
+[ext_resource type="AudioStream" uid="uid://qnheh13v72do" path="res://Assets/Music/trap-hip-hopgambling-addiction-125633.mp3" id="4_mcamy"]
+
+[node name="MusicScene" type="Node2D"]
+script = ExtResource("1_yowce")
+
+[node name="MainMenuAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hpqof")
+autoplay = true
+
+[node name="UpgradeMenuAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wh1vy")
+
+[node name="BlackjackAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mcamy")

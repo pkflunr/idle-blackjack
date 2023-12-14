@@ -6,6 +6,7 @@ var upgrade_name:String
 @onready var description_label = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/DescriptionLabel
 @onready var price_label = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/PriceLabel
 @onready var buy_button = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BuyButton
+@onready var texture_rect = $MarginContainer/VBoxContainer/HBoxContainer/TextureRect
 
 
 func set_upgrade_name(upgrade:Upgrade):
@@ -18,6 +19,7 @@ func _process(delta):
 	description_label.text = upgrade.description
 	price_label.text = "$" + str(upgrade.price)
 	buy_button.disabled = Stats.cash < upgrade.price
+	texture_rect.texture = upgrade.texture
 	
 	var prereqs_obtained = true
 	for prereq_name in upgrade.prerequisites:
