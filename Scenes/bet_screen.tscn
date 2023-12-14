@@ -3,46 +3,42 @@
 [ext_resource type="Theme" uid="uid://c0qo4mnu5rg8a" path="res://Scenes/spinbox_theme.tres" id="1_g6af5"]
 [ext_resource type="Script" path="res://Scripts/bet_screen.gd" id="2_nyjb4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht0kc"]
-bg_color = Color(0.235294, 0.647059, 0.847059, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcgn5"]
 
-[node name="ColorRect" type="PanelContainer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -282.0
-offset_top = -149.0
-offset_right = 283.0
-offset_bottom = 58.0
+[node name="BetScreen" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_g6af5")
-theme_override_styles/panel = SubResource("StyleBoxFlat_ht0kc")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gcgn5")
 script = ExtResource("2_nyjb4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
+alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Enter bet amount:"
+horizontal_alignment = 1
 
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
 layout_mode = 2
 min_value = 50.0
 step = 10.0
 value = 50.0
+alignment = 1
+prefix = "$"
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Bet"
 icon_alignment = 1
 
-[connection signal="value_changed" from="VBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

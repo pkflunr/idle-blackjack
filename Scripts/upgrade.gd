@@ -9,6 +9,8 @@ enum UpgradeType {
 }
 
 @export var type:UpgradeType
+@export var name:String
+
 
 func do_action():
 	# temp

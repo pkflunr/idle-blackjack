@@ -6,16 +6,16 @@ signal bet_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spinbox.max_value = Stats.bet_ceiling
+	spinbox.get_line_edit().mouse_filter = MOUSE_FILTER_IGNORE
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	spinbox.max_value = Stats.bet_ceiling
 
 
-func _on_spin_box_value_changed(value):
-	Stats.update_bet(value)
+func update_bet():
+	Stats.update_bet(spinbox.value)
 
 
 func _on_button_pressed():

@@ -4,6 +4,6 @@
 bg_color = Color(0, 0.658824, 0.858824, 1)
 
 [resource]
-default_font_size = 64
+default_font_size = 48
 LineEdit/font_sizes/font_size = 50
 LineEdit/styles/normal = SubResource("StyleBoxFlat_0igcs")

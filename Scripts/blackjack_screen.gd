@@ -1,4 +1,4 @@
-extends Control
+extends PanelContainer
 
 @onready var bet_screen = $BetScreen
 @onready var deck:Deck = $Deck
@@ -6,6 +6,7 @@ extends Control
 @onready var player_hand_display:HandDisplay = $VBoxContainer/PlayerHandDisplay
 @onready var black_jack_control_panel = $VBoxContainer/BlackJackControlPanel
 @onready var win_lose_label = $VBoxContainer/WinLoseLabel
+@onready var game_container = $VBoxContainer
 
 var game_ended = false
 var cash_change = 0
@@ -19,6 +20,7 @@ func _ready():
 
 func bet_display():
 	bet_screen.visible = true
+	game_container.visible = false
 	black_jack_control_panel.set_bet_mode()
 
 func _new_game():
@@ -114,5 +116,7 @@ func _on_stand():
 
 
 func _on_bet_screen_bet_pressed():
+	bet_screen.update_bet()
 	bet_screen.visible = false
+	game_container.visible = true
 	_new_game()
