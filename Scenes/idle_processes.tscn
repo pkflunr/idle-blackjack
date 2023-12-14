@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm71xbashu3yw"]
+
+[ext_resource type="Script" path="res://Scenes/idle_processes.gd" id="1_gr1hd"]
+
+[node name="idle_processes" type="Node"]
+script = ExtResource("1_gr1hd")
+
+[node name="testbox" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "$money generated: "

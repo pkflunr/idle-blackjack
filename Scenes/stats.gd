@@ -2,8 +2,17 @@ extends Node
 
 signal cash_changed
 signal bet_changed
+signal idle_changed
 
 var cash:int = 8000 
+
+var idle_process_list:IdleProcessList = preload("res://Assets/Resources/idle_process_list.tres")
+var idle_process_dict:Dictionary
+
+func _ready():
+	idle_process_dict = {}
+	for idle_process in idle_process_list.list:
+		idle_process_dict[idle_process.name] = idle_process
 
 var current_bet:int = 100
 
@@ -24,5 +33,9 @@ func update_cash(value):
 func update_bet(value):
 	current_bet = value
 	bet_changed.emit()
+	
 
+func update_idle_auto_cash(tier, value):
+	
+	idle_changed.emit()
 	

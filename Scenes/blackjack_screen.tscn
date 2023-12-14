@@ -34,6 +34,9 @@ layout_mode = 2
 
 [node name="Deck" parent="." instance=ExtResource("2_4ah77")]
 
+[node name="HUD" parent="." instance=ExtResource("5_0v005")]
+layout_mode = 0
+
 [node name="BetScreen" parent="." instance=ExtResource("2_l8mdx")]
 layout_mode = 2
 
