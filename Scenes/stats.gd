@@ -25,12 +25,12 @@ var current_bet:int = 100
 
 var bet_ceiling:int = 200
 
-var win_multiplier = 2
+var win_multiplier:float = 2
 
-var lose_multiplier = 1
+var lose_multiplier:float = 1
 
 # how much extra you win = multiplier * bet
-var blackjack_multiplier = 0.5
+var blackjack_multiplier:float = 0.5
 
 func update_cash(value):
 	cash += value

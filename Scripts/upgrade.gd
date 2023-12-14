@@ -14,7 +14,7 @@ enum UpgradeType {
 @export var name:String # display only
 @export var price:int # how much this upgrade costs
 @export var description:String # displayed in upgrade widget
-@export var value:int # the amount that the corresponding thing will be set to
+@export var value:float # the amount that the corresponding thing will be set to
 @export var idle_process_name:String # used only by UPGRADE_IDLE, the name of the process to upgrade
 @export var obtained:bool
 @export var prerequisites:Array[String] # if any of the upgrades in this array are unobtained, then this upgrade should be invisible

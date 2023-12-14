@@ -29,14 +29,24 @@ hand_name = "Player"
 visible = false
 layout_mode = 2
 
+[node name="CurrentBetLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Current Bet:"
+
+[node name="ChangeBetButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Change Bet"
+
 [node name="BlackJackControlPanel" parent="VBoxContainer" instance=ExtResource("3_2sk67")]
 layout_mode = 2
 
 [node name="Deck" parent="." instance=ExtResource("2_4ah77")]
 
 [node name="BetScreen" parent="." instance=ExtResource("2_l8mdx")]
+visible = false
 layout_mode = 2
 
+[connection signal="pressed" from="VBoxContainer/ChangeBetButton" to="." method="_on_change_bet_button_pressed"]
 [connection signal="hit" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_hit"]
 [connection signal="play_again" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_play_again"]
 [connection signal="stand" from="VBoxContainer/BlackJackControlPanel" to="." method="_on_stand"]

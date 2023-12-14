@@ -7,6 +7,8 @@ extends PanelContainer
 @onready var black_jack_control_panel = $VBoxContainer/BlackJackControlPanel
 @onready var win_lose_label = $VBoxContainer/WinLoseLabel
 @onready var game_container = $VBoxContainer
+@onready var change_bet_button = $VBoxContainer/ChangeBetButton
+@onready var current_bet_label = $VBoxContainer/CurrentBetLabel
 
 var game_ended = false
 var cash_change = 0
@@ -24,6 +26,7 @@ func bet_display():
 	black_jack_control_panel.set_bet_mode()
 
 func _new_game():
+	change_bet_button.disabled = true
 	game_ended = false
 	
 	win_lose_label.visible = false
@@ -65,6 +68,7 @@ func test_hand_values():
 func end_game():
 	game_ended = true
 	win_lose_label.visible = true
+	change_bet_button.disabled = false
 	black_jack_control_panel.set_end_mode()
 	dealer_hand_display.reveal_hand()
 
@@ -86,8 +90,8 @@ func draw():
 	end_game()
 
 func _on_play_again():
-	bet_display()
-	#_new_game()
+	#bet_display()
+	_new_game()
 
 
 func _on_hit():
@@ -119,4 +123,10 @@ func _on_bet_screen_bet_pressed():
 	bet_screen.update_bet()
 	bet_screen.visible = false
 	game_container.visible = true
+	current_bet_label.text = "Current Bet: $" + str(Stats.current_bet)
 	_new_game()
+
+
+func _on_change_bet_button_pressed():
+	if game_ended:
+		bet_display()

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UpgradeList" load_steps=8 format=3 uid="uid://caimua7kfuubv"]
+[gd_resource type="Resource" script_class="UpgradeList" load_steps=18 format=3 uid="uid://caimua7kfuubv"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_list.gd" id="1_4qcsk"]
 [ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_5facu"]
@@ -9,7 +9,7 @@ type = 0
 name = "Low Roller"
 price = 1000
 description = "Increases the max bet amount to 400."
-value = 400
+value = 400.0
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String]([])
@@ -20,7 +20,7 @@ type = 0
 name = "Medium Roller"
 price = 10000
 description = "Increases the max bet amount to 1000."
-value = 10000
+value = 1000.0
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String](["Low Roller"])
@@ -28,13 +28,13 @@ prerequisites = Array[String](["Low Roller"])
 [sub_resource type="Resource" id="Resource_14f21"]
 script = ExtResource("1_5facu")
 type = 0
-name = "omega high roller"
-price = 10
-description = "Hopefully this never appears!"
-value = 100000
+name = "Omega High Roller"
+price = 10000
+description = "Increases the max bet amount to 100,000...but do you really need that?"
+value = 100000.0
 idle_process_name = ""
-obtained = true
-prerequisites = Array[String]([])
+obtained = false
+prerequisites = Array[String](["Medium Roller"])
 
 [sub_resource type="Resource" id="Resource_h21m2"]
 script = ExtResource("1_5facu")
@@ -42,22 +42,132 @@ type = 1
 name = "Massive Payout"
 price = 5000
 description = "Increases the amount of money you earn when you win to 3x your original bet."
-value = 3
+value = 3.0
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_x3ooc"]
+script = ExtResource("1_5facu")
+type = 1
+name = "Even More Massive Payout"
+price = 10000
+description = "Increases the amount of money you earn when you win to 5x your original bet."
+value = 5.0
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Massive Payout"])
+
+[sub_resource type="Resource" id="Resource_etxn7"]
+script = ExtResource("1_5facu")
+type = 1
+name = "Absolutely Gigantic Payout"
+price = 50000
+description = "Increases the amount of money you earn when you win to 10x your original bet."
+value = 10.0
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Even More Massive Payout"])
+
+[sub_resource type="Resource" id="Resource_8wobg"]
+script = ExtResource("1_5facu")
+type = 2
+name = "Safety Net"
+price = 1000
+description = "Decreases the amount of money you lose to 0.9x your original bet."
+value = 0.9
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_cy7ft"]
+script = ExtResource("1_5facu")
+type = 2
+name = "Safer Safety Net"
+price = 5000
+description = "Decreases the amount of money you lose to 0.7x your original bet."
+value = 0.7
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Safety Net"])
+
+[sub_resource type="Resource" id="Resource_tr1d7"]
+script = ExtResource("1_5facu")
+type = 2
+name = "Easy Mode"
+price = 10000
+description = "Decreases the amount of money you lose to 0.5x your original bet."
+value = 0.0
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Safer Safety Net"])
+
+[sub_resource type="Resource" id="Resource_sab8n"]
+script = ExtResource("1_5facu")
+type = 3
+name = "Blackjack is a Game"
+price = 500
+description = "Increases the amount of extra money you earn when you hit Blackjack to 0.75x your original bet."
+value = 0.75
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_k5ra0"]
+script = ExtResource("1_5facu")
+type = 3
+name = "Player Decisions Matter"
+price = 1000
+description = "Increases the amount of extra money you earn when you hit Blackjack to 1x your original bet."
+value = 1.0
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Blackjack is a Game"])
+
+[sub_resource type="Resource" id="Resource_o7xfx"]
+script = ExtResource("1_5facu")
+type = 3
+name = "Jack Black"
+price = 5000
+description = "Increases the amount of extra money you earn when you hit Blackjack to 2x your original bet."
+value = 2.0
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Player Decisions Matter"])
 
 [sub_resource type="Resource" id="Resource_0qo88"]
 script = ExtResource("1_5facu")
 type = 4
 name = "Stop Being Lazy"
-price = 2000
-description = "Increases the amount of money your Cheap Spenders make."
-value = 2
+price = 1000
+description = "Increases the amount of money your Cheap Spenders make to 2.5/second."
+value = 5.0
 idle_process_name = "Cheap Spender"
 obtained = false
 prerequisites = Array[String]([])
 
+[sub_resource type="Resource" id="Resource_ph0by"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Gambling Lessons"
+price = 2000
+description = "Increases the amount of money your Cheap Spenders make to 5/second."
+value = 10.0
+idle_process_name = "Cheap Spender"
+obtained = false
+prerequisites = Array[String](["Stop Being Lazy"])
+
+[sub_resource type="Resource" id="Resource_1uo6i"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Less Cheap"
+price = 5000
+description = "Increases the amount of money your Cheap Spenders make to 10/second."
+value = 20.0
+idle_process_name = "Cheap Spender"
+obtained = false
+prerequisites = Array[String](["Gambling Lessons"])
+
 [resource]
 script = ExtResource("1_4qcsk")
-list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_14f21"), SubResource("Resource_h21m2"), SubResource("Resource_0qo88")])
+list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_14f21"), SubResource("Resource_h21m2"), SubResource("Resource_x3ooc"), SubResource("Resource_etxn7"), SubResource("Resource_8wobg"), SubResource("Resource_cy7ft"), SubResource("Resource_tr1d7"), SubResource("Resource_sab8n"), SubResource("Resource_k5ra0"), SubResource("Resource_o7xfx"), SubResource("Resource_0qo88"), SubResource("Resource_ph0by"), SubResource("Resource_1uo6i")])
