@@ -27,6 +27,6 @@ func _process(delta):
 	visible = (not upgrade.obtained) and prereqs_obtained
 
 func _on_buy_button_pressed():
-	Stats.cash - Stats.upgrade_dict[upgrade_name].price
+	Stats.cash -= Stats.upgrade_dict[upgrade_name].price
 	Stats.upgrade_dict[upgrade_name].obtained = true
 	Stats.upgrade_dict[upgrade_name].do_action()
