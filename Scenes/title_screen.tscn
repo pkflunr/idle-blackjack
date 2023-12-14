@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://chf2mndqa4x21"]
+
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_282gm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_at61v"]
+bg_color = Color(0.203922, 0.615686, 0.996078, 1)
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_at61v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "Idle Blackjack"
+horizontal_alignment = 1
+
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+script = ExtResource("1_282gm")
+
+[node name="LoadGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Load Game"
+
+[connection signal="pressed" from="VBoxContainer/NewGame" to="VBoxContainer/NewGame" method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGame" to="VBoxContainer/NewGame" method="_on_load_game_pressed"]
