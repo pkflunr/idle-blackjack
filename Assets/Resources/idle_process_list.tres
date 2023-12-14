@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/idle_process.gd" id="1_8hby8"]
 [ext_resource type="Script" path="res://Scripts/idle_list.gd" id="1_bgqnp"]
-[ext_resource type="Texture2D" uid="uid://csvqpj4k8eiwx" path="res://Assets/PNG/Cards (medium)/card_clubs_02.png" id="2_iubck"]
+[ext_resource type="Texture2D" uid="uid://bv708y0hq0j6o" path="res://Assets/coincolor.png" id="2_uwfoy"]
 [ext_resource type="Texture2D" uid="uid://fq8oglh11hxy" path="res://Assets/PNG/Cards (large)/card_clubs_07.png" id="3_cucjv"]
 [ext_resource type="Texture2D" uid="uid://cd25n83ps76c1" path="res://Assets/PNG/Cards (large)/card_clubs_10.png" id="4_j5js3"]
 [ext_resource type="Texture2D" uid="uid://utsdcpsop1mo" path="res://Assets/PNG/Cards (large)/card_clubs_J.png" id="5_vjdw6"]
@@ -16,7 +16,7 @@ base_cost = 100
 amount = 1
 time = 2.0
 description = "A cheapskate who you found on the streets. Willing to pay a portion of their shares in exchange for a sliver of money."
-texture = ExtResource("2_iubck")
+texture = ExtResource("2_uwfoy")
 
 [sub_resource type="Resource" id="Resource_bilew"]
 script = ExtResource("1_8hby8")
