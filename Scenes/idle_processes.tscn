@@ -1,24 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm71xbashu3yw"]
+[gd_scene load_steps=2 format=3 uid="uid://dm71xbashu3yw"]
 
-[ext_resource type="Script" path="res://Scenes/stats.gd" id="1_ja10o"]
-[ext_resource type="Script" path="res://Scripts/cheap_spender_idle_process.gd" id="2_eselr"]
-[ext_resource type="Script" path="res://Scripts/moderate_player_idle_process.gd" id="3_c146b"]
-[ext_resource type="Script" path="res://Scripts/heavy_gambler_idle_process.gd" id="4_jueml"]
+[ext_resource type="Script" path="res://Scenes/idle_processes.gd" id="1_gr1hd"]
 
-[node name="idle_processes" type="Node2D"]
-script = ExtResource("1_ja10o")
-
-[node name="CheapSpenderIdleProcess" type="Timer" parent="."]
-autostart = true
-script = ExtResource("2_eselr")
-
-[node name="ModeratePlayerIdleProcess" type="Timer" parent="."]
-autostart = true
-script = ExtResource("3_c146b")
-
-[node name="HeavyGamblerIdleProcess" type="Timer" parent="."]
-autostart = true
-script = ExtResource("4_jueml")
+[node name="idle_processes" type="Node"]
+script = ExtResource("1_gr1hd")
 
 [node name="testbox" type="Label" parent="."]
 offset_right = 40.0

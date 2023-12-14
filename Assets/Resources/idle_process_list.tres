@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="IdleProcessList" load_steps=6 format=3 uid="uid://c1d8nhsaaefwh"]
+
+[ext_resource type="Script" path="res://Scripts/idle_process.gd" id="1_8hby8"]
+[ext_resource type="Script" path="res://Scripts/idle_list.gd" id="1_bgqnp"]
+
+[sub_resource type="Resource" id="Resource_gtsl6"]
+script = ExtResource("1_8hby8")
+name = "Cheap Spender"
+value = 1
+upgrade_multiplier = 1
+base_cost = 100
+amount = 1
+time = 2.0
+
+[sub_resource type="Resource" id="Resource_bilew"]
+script = ExtResource("1_8hby8")
+name = "Moderate Player"
+value = 10
+upgrade_multiplier = 1
+base_cost = 10000
+amount = 1
+time = 1.0
+
+[sub_resource type="Resource" id="Resource_ky636"]
+script = ExtResource("1_8hby8")
+name = "Heavy Gambler"
+value = 100
+upgrade_multiplier = 1
+base_cost = 1000000
+amount = 1
+time = 1.0
+
+[resource]
+script = ExtResource("1_bgqnp")
+list = Array[ExtResource("1_8hby8")]([SubResource("Resource_gtsl6"), SubResource("Resource_bilew"), SubResource("Resource_ky636")])

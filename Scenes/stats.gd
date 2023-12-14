@@ -6,13 +6,13 @@ signal idle_changed
 
 var cash:int = 8000 
 
-var idle_dict = {"firstIdle": 1, "secondIdle": 10, "thirdIdle": 100}
+var idle_process_list:IdleProcessList = preload("res://Assets/Resources/idle_process_list.tres")
+var idle_process_dict:Dictionary
 
-var idle_multiplier_dict = {"firstIdle": 1, "secondIdle": 1, "thirdIdle": 1}
-
-var idle_cost_dict = {"firstIdle": 100, "secondIdle": 10000, "thirdIdle": 1000000}
-
-var idle_amt_dict = {"firstIdle": 1, "secondIdle": 0, "thirdIdle": 0}
+func _ready():
+	idle_process_dict = {}
+	for idle_process in idle_process_list.list:
+		idle_process_dict[idle_process.name] = idle_process
 
 var current_bet:int = 100
 
