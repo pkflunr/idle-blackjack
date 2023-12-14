@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b47pjhu0rliin"]
+[gd_scene load_steps=6 format=3 uid="uid://b47pjhu0rliin"]
 
 [ext_resource type="PackedScene" uid="uid://cfw854lqhip55" path="res://Scenes/HUD.tscn" id="1_qvflf"]
 [ext_resource type="Script" path="res://Scripts/main_screen.gd" id="1_tkt53"]
 [ext_resource type="PackedScene" uid="uid://bafo7nspi501e" path="res://Scenes/blackjack_screen.tscn" id="3_2ikg7"]
+[ext_resource type="PackedScene" uid="uid://csip4207jxjd0" path="res://Scenes/moneymakers_screen.tscn" id="4_6eru5"]
 [ext_resource type="PackedScene" uid="uid://c1p4vgu4hwp47" path="res://Scenes/upgrade_screen.tscn" id="4_us3fm"]
 
 [node name="MainScreen" type="PanelContainer"]
@@ -32,16 +33,9 @@ tabs_visible = false
 [node name="BlackJackScreen" parent="VBoxContainer/TabContainer" instance=ExtResource("3_2ikg7")]
 layout_mode = 2
 
-[node name="two" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+[node name="MoneymakersScreen" parent="VBoxContainer/TabContainer" instance=ExtResource("4_6eru5")]
 visible = false
 layout_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer/two"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/two/CenterContainer"]
-layout_mode = 2
-text = "two!"
 
 [node name="UpgradeScreen" parent="VBoxContainer/TabContainer" instance=ExtResource("4_us3fm")]
 visible = false

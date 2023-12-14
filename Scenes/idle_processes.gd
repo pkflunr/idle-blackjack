@@ -11,6 +11,3 @@ func _ready():
 
 func payout_process(process:IdleProcess):
 	Stats.cash += process.get_payout()
-
-func _process(delta):
-	$testbox.text = "$"+str(Stats.cash)

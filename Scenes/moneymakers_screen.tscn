@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://csip4207jxjd0"]
+
+[ext_resource type="PackedScene" uid="uid://c3ofwxgj2di6q" path="res://Scenes/idle_process_widget.tscn" id="1_c2ekt"]
+[ext_resource type="Script" path="res://Scripts/moneymakers_screen.gd" id="1_phg2y"]
+[ext_resource type="PackedScene" uid="uid://dm71xbashu3yw" path="res://Scenes/idle_processes.tscn" id="3_6cnj2"]
+
+[node name="MoneymakersScreen" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_phg2y")
+widget_scene = ExtResource("1_c2ekt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="idle_processes" parent="." instance=ExtResource("3_6cnj2")]
