@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs66jgg8mblwn"]
+[gd_scene load_steps=3 format=3 uid="uid://cs66jgg8mblwn"]
 
+[ext_resource type="Script" path="res://Scripts/upgrade_widget.gd" id="1_6n0qk"]
 [ext_resource type="Texture2D" uid="uid://873oglnlonvt" path="res://icon.svg" id="1_rwm7f"]
 
 [node name="UpgradeWidget" type="PanelContainer"]
@@ -13,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 mouse_filter = 1
+script = ExtResource("1_6n0qk")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -61,3 +63,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 text = "Buy!"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

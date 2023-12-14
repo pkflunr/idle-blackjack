@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="UpgradeList" load_steps=8 format=3 uid="uid://caimua7kfuubv"]
+
+[ext_resource type="Script" path="res://Scripts/upgrade_list.gd" id="1_4qcsk"]
+[ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_5facu"]
+
+[sub_resource type="Resource" id="Resource_g3dv1"]
+script = ExtResource("1_5facu")
+type = 0
+name = "Low Roller"
+price = 1000
+description = "Increases the max bet amount to 400."
+value = 400
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_pxhlt"]
+script = ExtResource("1_5facu")
+type = 0
+name = "Medium Roller"
+price = 10000
+description = "Increases the max bet amount to 1000."
+value = 10000
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String](["Low Roller"])
+
+[sub_resource type="Resource" id="Resource_14f21"]
+script = ExtResource("1_5facu")
+type = 0
+name = "omega high roller"
+price = 10
+description = "Hopefully this never appears!"
+value = 100000
+idle_process_name = ""
+obtained = true
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_h21m2"]
+script = ExtResource("1_5facu")
+type = 1
+name = "Massive Payout"
+price = 5000
+description = "Increases the amount of money you earn when you win to 3x your original bet."
+value = 3
+idle_process_name = ""
+obtained = false
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_0qo88"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Stop Being Lazy"
+price = 2000
+description = "Increases the amount of money your Cheap Spenders make."
+value = 2
+idle_process_name = "Cheap Spender"
+obtained = false
+prerequisites = Array[String]([])
+
+[resource]
+script = ExtResource("1_4qcsk")
+list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_14f21"), SubResource("Resource_h21m2"), SubResource("Resource_0qo88")])
