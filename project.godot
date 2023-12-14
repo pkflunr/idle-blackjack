@@ -25,6 +25,11 @@ window/size/viewport_width=486
 window/size/viewport_height=864
 window/handheld/orientation=1
 
+[gui]
+
+theme/custom="res://Scenes/spinbox_theme.tres"
+theme/custom_font="res://Assets/retropix.ttf"
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true

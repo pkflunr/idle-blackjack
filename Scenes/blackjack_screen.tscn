@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bafo7nspi501e"]
+[gd_scene load_steps=7 format=3 uid="uid://bafo7nspi501e"]
 
 [ext_resource type="PackedScene" uid="uid://bbermgijtupnc" path="res://Scenes/hand_display.tscn" id="1_2xuw3"]
 [ext_resource type="Script" path="res://Scripts/blackjack_screen.gd" id="1_ev3fv"]
 [ext_resource type="PackedScene" uid="uid://b8ha7sd4v4hus" path="res://Scenes/deck.tscn" id="2_4ah77"]
 [ext_resource type="PackedScene" uid="uid://w23ch4jo85np" path="res://Scenes/bet_screen.tscn" id="2_l8mdx"]
+[ext_resource type="Texture2D" uid="uid://bn1d41drscao4" path="res://Assets/pokerbg.jpg" id="2_wuins"]
 [ext_resource type="PackedScene" uid="uid://v053ac4efnfd" path="res://Scenes/blackjack_control_panel.tscn" id="3_2sk67"]
 
 [node name="BlackJackScreen" type="PanelContainer"]
@@ -13,6 +14,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ev3fv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_wuins")
+expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -28,13 +34,16 @@ hand_name = "Player"
 [node name="WinLoseLabel" type="Label" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 
 [node name="CurrentBetLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Current Bet:"
 
 [node name="ChangeBetButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Change Bet"
 
 [node name="BlackJackControlPanel" parent="VBoxContainer" instance=ExtResource("3_2sk67")]

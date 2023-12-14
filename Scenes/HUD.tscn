@@ -19,16 +19,19 @@ layout_mode = 2
 [node name="MoneyLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
 text = "$100"
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
 text = "Idle Blackjack"
 horizontal_alignment = 1
 
 [node name="MoneyGenerationLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 30
 text = "$5/second"
