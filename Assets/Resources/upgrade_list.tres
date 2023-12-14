@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UpgradeList" load_steps=18 format=3 uid="uid://caimua7kfuubv"]
+[gd_resource type="Resource" script_class="UpgradeList" load_steps=23 format=3 uid="uid://caimua7kfuubv"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_list.gd" id="1_4qcsk"]
 [ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_5facu"]
@@ -168,6 +168,61 @@ idle_process_name = "Cheap Spender"
 obtained = false
 prerequisites = Array[String](["Gambling Lessons"])
 
+[sub_resource type="Resource" id="Resource_11ag5"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Good Friends"
+price = 12000
+description = "Increases the amount of money your Moderate Players make to 15/second."
+value = 15.0
+idle_process_name = "Moderate Player"
+obtained = false
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_7l6t5"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Very Good Friends"
+price = 15000
+description = "Increases the amount of money your Moderate Players make to 25/second."
+value = 25.0
+idle_process_name = "Moderate Player"
+obtained = false
+prerequisites = Array[String](["Good Friends"])
+
+[sub_resource type="Resource" id="Resource_iyyrt"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Best Friends!"
+price = 30000
+description = "Increases the amount of money your Moderate Players make to 50/second."
+value = 50.0
+idle_process_name = "Moderate Player"
+obtained = false
+prerequisites = Array[String](["Very Good Friends"])
+
+[sub_resource type="Resource" id="Resource_1uasu"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Gambling Encouragement"
+price = 1500000
+description = "Increases the amount of money your Heavy Gamblers make to 150/second."
+value = 150.0
+idle_process_name = "Heavy Gambler"
+obtained = false
+prerequisites = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_0ium7"]
+script = ExtResource("1_5facu")
+type = 4
+name = "Giant Whale"
+price = 3000000
+description = "Increases the amount of money your Heavy Gamblers make to 200/second."
+value = 200.0
+idle_process_name = "Heavy Gambler"
+obtained = false
+prerequisites = Array[String](["Gambling Encouragement"])
+
 [resource]
 script = ExtResource("1_4qcsk")
-list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_14f21"), SubResource("Resource_h21m2"), SubResource("Resource_x3ooc"), SubResource("Resource_etxn7"), SubResource("Resource_8wobg"), SubResource("Resource_cy7ft"), SubResource("Resource_tr1d7"), SubResource("Resource_sab8n"), SubResource("Resource_k5ra0"), SubResource("Resource_o7xfx"), SubResource("Resource_0qo88"), SubResource("Resource_ph0by"), SubResource("Resource_1uo6i")])
+list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_14f21"), SubResource("Resource_h21m2"), SubResource("Resource_x3ooc"), SubResource("Resource_etxn7"), SubResource("Resource_8wobg"), SubResource("Resource_cy7ft"), SubResource("Resource_tr1d7"), SubResource("Resource_sab8n"), SubResource("Resource_k5ra0"), SubResource("Resource_o7xfx"), SubResource("Resource_0qo88"), SubResource("Resource_ph0by"), SubResource("Resource_1uo6i"), SubResource("Resource_11ag5"), SubResource("Resource_7l6t5"), SubResource("Resource_iyyrt"), SubResource("Resource_1uasu"), SubResource("Resource_0ium7")])
