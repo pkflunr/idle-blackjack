@@ -11,8 +11,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	spinbox.max_value = Stats.bet_ceiling
-
+	if Stats.cash < Stats.bet_ceiling:
+		spinbox.max_value = Stats.cash
+	else:
+		spinbox.max_value = Stats.bet_ceiling
 
 func update_bet():
 	Stats.update_bet(spinbox.value)
