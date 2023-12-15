@@ -4,7 +4,7 @@ signal cash_changed
 signal bet_changed
 signal idle_changed
 
-var cash:int = 8000
+var cash:int = 100
 var money_per_second = 0
 
 var idle_process_list:IdleProcessList = preload("res://Assets/Resources/idle_process_list.tres")
@@ -56,12 +56,12 @@ var current_bet:int = 100
 
 var bet_ceiling:int = 200
 
-var win_multiplier:float = 2
+var win_multiplier:float = 3
 
 var lose_multiplier:float = 1
 
 # how much extra you win = multiplier * bet
-var blackjack_multiplier:float = 0.5
+var blackjack_multiplier:float = 1
 
 func update_cash(value):
 	cash += value

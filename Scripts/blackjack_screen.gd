@@ -121,6 +121,8 @@ func _on_stand():
 
 
 func _on_bet_screen_bet_pressed():
+	if (!MusicScene.blackjack_menu_track.playing):
+		MusicScene.switch_to_blackjack()
 	bet_screen.update_bet()
 	bet_screen.visible = false
 	game_container.visible = true
