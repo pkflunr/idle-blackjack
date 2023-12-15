@@ -17,4 +17,4 @@ func calculate_money_per_second():
 		var time = Stats.idle_process_dict[idle_process_key].time
 		var multiplier = Stats.idle_process_dict[idle_process_key].upgrade_multiplier
 		money_per_second += (amount * multiplier * number) / time
-	Stats.money_per_second = money_per_second
+	Stats.money_per_second = snapped(money_per_second, 0.01)
