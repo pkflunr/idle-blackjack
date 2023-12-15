@@ -42,6 +42,8 @@ func save_game():
 func load_game():
 	var saved_upgrade_list:UpgradeList = load("user://saved_upgrade_list.tres")
 	var saved_process_list:IdleProcessList = load("user://saved_process_list.tres")
+	if !saved_process_list or !saved_upgrade_list:
+		return false
 	idle_process_dict = {}
 	for idle_process in saved_process_list.list:
 		idle_process_dict[idle_process.name] = idle_process
@@ -51,6 +53,7 @@ func load_game():
 		upgrade_dict[upgrade.name] = upgrade
 	
 	cash = FileAccess.open("user://money.money", FileAccess.READ).get_64()
+	return true
 
 var current_bet:int = 100
 
