@@ -49,7 +49,8 @@ func _new_game():
 	elif player_hand_display.get_hand_value() == BLACKJACK_VALUE:
 		win_lose_label.text = "Blackjack!!"
 		win(true)
-	test_hand_values()
+	if not game_ended:
+		test_hand_values()
 
 func test_hand_values():
 	var dealer_hand_value = dealer_hand_display.get_hand_value()
