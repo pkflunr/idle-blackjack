@@ -24,7 +24,8 @@ func set_bet_mode():
 	play_again_button.visible = false
 	
 
-
+func _process(delta):
+	play_again_button.disabled = Stats.cash < Stats.current_bet
 
 func _on_hit_button_pressed():
 	hit.emit()
