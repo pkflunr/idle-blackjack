@@ -37,6 +37,7 @@ func save_game():
 	
 	ResourceSaver.save(saved_upgrade_list, "user://saved_upgrade_list.tres")
 	ResourceSaver.save(saved_process_list, "user://saved_process_list.tres")
+	FileAccess.open("user://money.money", FileAccess.WRITE).store_64(cash)
 
 func load_game():
 	var saved_upgrade_list:UpgradeList = load("user://saved_upgrade_list.tres")
@@ -48,6 +49,8 @@ func load_game():
 	upgrade_dict = {}
 	for upgrade in saved_upgrade_list.list:
 		upgrade_dict[upgrade.name] = upgrade
+	
+	cash = FileAccess.open("user://money.money", FileAccess.READ).get_64()
 
 var current_bet:int = 100
 
