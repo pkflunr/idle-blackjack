@@ -42,8 +42,7 @@ horizontal_alignment = 1
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 min_value = 1.0
-step = 10.0
-value = 51.0
+value = 50.0
 alignment = 1
 prefix = "$"
 
