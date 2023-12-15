@@ -2,7 +2,9 @@ extends PanelContainer
 
 signal bet_pressed
 
-@onready var spinbox = $VBoxContainer/SpinBox
+@onready var spinbox = $VBoxContainer2/VBoxContainer/SpinBox
+@onready var save_button = $VBoxContainer2/SaveButton
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,4 +25,10 @@ func update_bet():
 func _on_button_pressed():
 	bet_pressed.emit()
 	
-	
+
+
+func _on_save_button_pressed():
+	Stats.save_game()
+	save_button.text = "Saved!"
+	await get_tree().create_timer(2).timeout
+	save_button.text = "Save Game"
