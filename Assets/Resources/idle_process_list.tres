@@ -13,8 +13,8 @@ name = "Cheap Spender"
 value = 1
 upgrade_multiplier = 1
 base_cost = 100
-amount = 1
-time = 2.0
+amount = 0
+time = 3.0
 description = "A cheapskate who you found on the streets. Willing to pay a portion of their shares in exchange for a sliver of money."
 texture = ExtResource("2_uwfoy")
 
@@ -25,7 +25,7 @@ value = 10
 upgrade_multiplier = 1
 base_cost = 10000
 amount = 0
-time = 1.0
+time = 3.0
 description = "Your good old friend Ryan. Agreed to split winnings between you and him, as long as you pay him first that is."
 texture = ExtResource("3_cucjv")
 
@@ -36,7 +36,7 @@ value = 100
 upgrade_multiplier = 1
 base_cost = 1000000
 amount = 0
-time = 1.0
+time = 2.0
 description = "A hopeless gambling addict. Agreed to share all spoils as long as they got to gamble as much as they could."
 texture = ExtResource("4_j5js3")
 

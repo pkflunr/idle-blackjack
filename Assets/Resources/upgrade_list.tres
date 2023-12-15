@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UpgradeList" load_steps=13 format=3 uid="uid://caimua7kfuubv"]
+[gd_resource type="Resource" script_class="UpgradeList" load_steps=12 format=3 uid="uid://caimua7kfuubv"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_list.gd" id="1_4qcsk"]
 [ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_5facu"]
@@ -13,7 +13,7 @@ type = 0
 name = "Low Roller"
 price = 1000
 description = "Increases the max bet amount to 400."
-value = 0.0
+value = 400.0
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String]([])
@@ -25,22 +25,11 @@ type = 0
 name = "Medium Roller"
 price = 10000
 description = "Increases the max bet amount to 1000."
-value = 0.0
+value = 1000.0
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String](["Low Roller"])
 texture = ExtResource("3_thiiw")
-
-[sub_resource type="Resource" id="Resource_14f21"]
-script = ExtResource("1_5facu")
-type = 0
-name = "omega high roller"
-price = 10
-description = "Hopefully this never appears!"
-value = 0.0
-idle_process_name = ""
-obtained = false
-prerequisites = Array[String](["Medium Roller"])
 
 [sub_resource type="Resource" id="Resource_h21m2"]
 script = ExtResource("1_5facu")
@@ -48,7 +37,7 @@ type = 1
 name = "Massive Payout"
 price = 5000
 description = "Increases the amount of money you earn when you win to 3x your original bet."
-value = 0.0
+value = 3.0
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String]([])
@@ -60,7 +49,7 @@ type = 4
 name = "Stop Being Lazy"
 price = 2000
 description = "Increases the amount of money your Cheap Spenders make."
-value = 0.0
+value = 2.0
 idle_process_name = "Cheap Spender"
 obtained = false
 prerequisites = Array[String]([])
@@ -72,11 +61,11 @@ type = 2
 name = "Sore Loser"
 price = 5000
 description = "Lose less money after losing a game (by whining and complaining)"
-value = 0.0
+value = 0.5
 idle_process_name = ""
 obtained = false
 prerequisites = Array[String]([])
 
 [resource]
 script = ExtResource("1_4qcsk")
-list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_14f21"), SubResource("Resource_h21m2"), SubResource("Resource_0qo88"), SubResource("Resource_jujb6")])
+list = Array[ExtResource("1_5facu")]([SubResource("Resource_g3dv1"), SubResource("Resource_pxhlt"), SubResource("Resource_h21m2"), SubResource("Resource_0qo88"), SubResource("Resource_jujb6")])
