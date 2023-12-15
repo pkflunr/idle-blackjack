@@ -1,11 +1,21 @@
-extends Node2D
+extends Node
 
+@onready var animation_player = $AnimationPlayer
+@onready var main_menu_track = $MainMenuAudioStreamPlayer
+@onready var upgrade_menu_track = $UpgradeMenuAudioStreamPlayer
+@onready var blackjack_menu_track = $BlackjackAudioStreamPlayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$MainMenuAudioStreamPlayer.play()
 
+func start_game():
+	animation_player.play("MainMenuFadeOut")
+	upgrade_menu_track.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func switch_to_blackjack():
+	animation_player.play("BlackjackMenuFadeIn")
+	blackjack_menu_track.play()
+
+func switch_to_upgrade_menu():
+	animation_player.play("UpgradeMenuFadeIn")
+	upgrade_menu_track.play()

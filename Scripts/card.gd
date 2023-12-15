@@ -10,7 +10,7 @@ enum Suit {
 @export var suit:Suit
 @export_range(1,13) var value:int
 
-@onready var card_sprite = $VBoxContainer/CardSprite
+@onready var card_sprite
 
 var faceup = true
 
