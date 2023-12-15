@@ -10,7 +10,8 @@ func _ready():
 
 func start_game():
 	animation_player.play("MainMenuFadeOut")
-	upgrade_menu_track.play()
+	await animation_player.animation_finished
+	blackjack_menu_track.play()
 
 func switch_to_blackjack():
 	animation_player.play("BlackjackMenuFadeIn")
