@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs66jgg8mblwn"]
+[gd_scene load_steps=2 format=3 uid="uid://cs66jgg8mblwn"]
 
 [ext_resource type="Script" path="res://Scripts/upgrade_widget.gd" id="1_6n0qk"]
-[ext_resource type="Texture2D" uid="uid://873oglnlonvt" path="res://icon.svg" id="1_rwm7f"]
 
 [node name="UpgradeWidget" type="PanelContainer"]
 anchors_preset = 14
@@ -33,11 +32,6 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_rwm7f")
-stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

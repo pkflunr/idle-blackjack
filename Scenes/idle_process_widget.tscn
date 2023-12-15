@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3ofwxgj2di6q"]
+[gd_scene load_steps=2 format=3 uid="uid://c3ofwxgj2di6q"]
 
-[ext_resource type="Texture2D" uid="uid://873oglnlonvt" path="res://icon.svg" id="1_j1yn1"]
 [ext_resource type="Script" path="res://Scripts/idle_process_widget.gd" id="1_q7bma"]
 
 [node name="IdleProcessWidget" type="PanelContainer"]
@@ -34,13 +33,6 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_j1yn1")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

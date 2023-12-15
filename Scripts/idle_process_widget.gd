@@ -6,7 +6,6 @@ extends PanelContainer
 @onready var price_label = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/PriceLabel
 @onready var description_label = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/DescriptionLabel
 @onready var buy_button = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BuyButton
-@onready var texture_rect = $MarginContainer/VBoxContainer/HBoxContainer/TextureRect
 
 
 var idle_process_name:String
@@ -22,7 +21,6 @@ func _process(delta):
 	price_label.text = "$"+str(idle_process.get_current_cost())
 	description_label.text = idle_process.description
 	buy_button.disabled = Stats.cash < idle_process.get_current_cost()
-	texture_rect.texture = idle_process.texture
 
 
 func _on_buy_button_pressed():
